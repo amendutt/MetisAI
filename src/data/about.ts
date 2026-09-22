@@ -3,6 +3,7 @@ import { BRAND_NAME } from "./constants";
 
 import mukulPhoto from "../assets/team/mukul-kumar-singh.jpg";
 import jagritiPhoto from "../assets/team/jagriti.jpg";
+import monisPhoto from "../assets/team/monis-khan.jpg";
 import ishanPhoto from "../assets/team/ishan-dwivedi.jpg";
 import krishnaPhoto from "../assets/team/krishna-kumar-burman.jpg";
 import yashasavPhoto from "../assets/team/yashasav-khandelwal.jpg";
@@ -25,6 +26,17 @@ export type TeamMember = {
 
 /** Senior consultants — Central Research Laboratory, Bharat Electronics Limited. */
 export const CONSULTANTS: TeamMember[] = [
+  {
+    name: "Mohammed Monis Khan",
+    role: "AI Researcher | Researcher, UPCST | Healthcare | Small Language Models",
+    credential: "Researcher, Uttar Pradesh Council of Science & Technology (UPCST)",
+    initials: "MK",
+    color: T.cat.nlp,
+    photo: monisPhoto,
+    specialties: ["Generative AI", "Small Language Models", "Healthcare AI", "NLP"],
+    bio: "A research-oriented technology consultant specializing in Artificial Intelligence, Machine Learning, and NLP. He bridges technical expertise with business needs to design scalable solutions, including Generative AI models, predictive analytics, intelligent architectures, and analytical dashboards. His experience spans healthcare AI, language translation, and ambiguity resolution. Additionally, as a forward-thinking problem solver, he has published academic research papers focusing on Health Medics and Natural Language Processing to drive organizational growth.",
+    exp: "3+",
+  },
   {
     name: "Mukul Kumar Singh",
     role: "AI & Data Science Consultant",

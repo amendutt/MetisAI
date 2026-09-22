@@ -25,7 +25,7 @@ export function Footer({ setActive }: { setActive: (section: NavLink) => void })
           }}
         >
           <div style={{ gridColumn: "span 2", minWidth: 240 }}>
-            <Wordmark size={24} onDark />
+            <Wordmark height={54} onDark />
             <p
               style={{
                 fontFamily: T.font.body,

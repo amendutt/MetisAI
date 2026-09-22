@@ -18,7 +18,7 @@ export function HeroSection({ setActive }: { setActive: (section: NavLink) => vo
     <div
       style={{
         background: T.color.paper,
-        padding: "clamp(130px, 16vw, 190px) 6% clamp(56px, 7vw, 88px)",
+        padding: "clamp(48px, 7vw, 88px) 6% clamp(56px, 7vw, 88px)",
       }}
     >
       <div style={{ maxWidth: T.maxW, margin: "0 auto" }}>

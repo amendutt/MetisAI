@@ -21,11 +21,12 @@ export function OurConsultantsPage() {
               margin: "20px 0 18px",
             }}
           >
-            Advisors from the Central Research Laboratory, Bharat Electronics Limited.
+            Advisors from national research institutions and technology practice.
           </h2>
           <p style={{ fontFamily: T.font.body, fontSize: 17, lineHeight: 1.75, color: T.color.inkSoft }}>
-            Our consultants bring AI and Data Science research from a national defense research
-            institution directly into practical, deployable systems.
+            Our consultants bring AI and Data Science research from the Central Research Laboratory
+            (Bharat Electronics Limited) and the Uttar Pradesh Council of Science &amp; Technology
+            directly into practical, deployable systems.
           </p>
         </div>
       </Reveal>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Wordmark } from "./Wordmark";
 import { Button } from "./Button";
 import { T } from "../data/theme";
@@ -10,20 +10,38 @@ export function Navbar({
   setActive,
   activeAbout,
   goToAbout,
+  onHeightChange,
 }: {
   active: NavLink;
   setActive: (section: NavLink) => void;
   activeAbout: AboutLink;
   goToAbout: (sub: AboutLink) => void;
+  /** Reports the navbar's real rendered height (it wraps to 2–3 rows on narrow screens), so callers can size content offsets exactly instead of guessing. */
+  onHeightChange?: (height: number) => void;
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
+
+  useEffect(() => {
+    const el = navRef.current;
+    if (!el || !onHeightChange) return;
+    const report = () => onHeightChange(el.offsetHeight);
+    report();
+    const ro = new ResizeObserver(report);
+    ro.observe(el);
+    window.addEventListener("resize", report);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", report);
+    };
+  }, [onHeightChange]);
 
   const linkStyle = (isActive: boolean) => ({
     fontFamily: T.font.mono,
@@ -41,6 +59,7 @@ export function Navbar({
 
   return (
     <nav
+      ref={navRef}
       style={{
         position: "fixed",
         top: 0,
@@ -62,9 +81,9 @@ export function Navbar({
           alignItems: "center",
           justifyContent: "space-between",
           gap: 24,
-          minHeight: 72,
+          minHeight: 92,
           flexWrap: "wrap",
-          paddingBlock: 10,
+          paddingBlock: 14,
         }}
       >
         <button
@@ -72,7 +91,7 @@ export function Navbar({
           style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
           aria-label="MetisAI home"
         >
-          <Wordmark size={20} />
+          <Wordmark height={62} />
         </button>
 
         <div style={{ display: "flex", gap: 22, flexWrap: "wrap", alignItems: "center" }}>

@@ -16,6 +16,9 @@ import type { NavLink, AboutLink } from "./data/constants";
 export default function App() {
   const [active, setActive] = useState<NavLink>("Home");
   const [activeAbout, setActiveAbout] = useState<AboutLink>(ABOUT_LINKS[0]);
+  // Real, measured navbar height (it wraps to more rows on narrow screens),
+  // so content always clears it exactly instead of relying on guessed offsets.
+  const [navHeight, setNavHeight] = useState(92);
 
   const scrollTo = (section: NavLink) => {
     setActive(section);
@@ -28,14 +31,17 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Inner pages need top padding to clear the fixed navbar; the hero has its own.
-  const padTop = active !== "Home" && active !== "About Us" ? 72 : 0;
-
   return (
     <div style={{ background: T.color.paper, color: T.color.ink }}>
-      <Navbar active={active} setActive={scrollTo} activeAbout={activeAbout} goToAbout={goToAbout} />
+      <Navbar
+        active={active}
+        setActive={scrollTo}
+        activeAbout={activeAbout}
+        goToAbout={goToAbout}
+        onHeightChange={setNavHeight}
+      />
 
-      <main style={{ paddingTop: padTop }}>
+      <main style={{ paddingTop: navHeight }}>
         {active === "Home" && (
           <>
             <HeroSection setActive={scrollTo} />
@@ -49,7 +55,7 @@ export default function App() {
         )}
 
         {active === "About Us" && (
-          <AboutSection activeAbout={activeAbout} setActiveAbout={setActiveAbout} standalone />
+          <AboutSection activeAbout={activeAbout} setActiveAbout={setActiveAbout} />
         )}
         {active === "Courses" && <CoursesSection />}
         {active === "Projects" && <ProjectsSection />}

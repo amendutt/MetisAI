@@ -14,15 +14,12 @@ import { CoreTeamPage } from "./about/CoreTeamPage";
 export function AboutSection({
   activeAbout,
   setActiveAbout,
-  standalone = false,
 }: {
   activeAbout: AboutLink;
   setActiveAbout: (sub: AboutLink) => void;
-  /** When rendered as its own page, add top padding to clear the fixed navbar. */
-  standalone?: boolean;
 }) {
   return (
-    <div style={{ paddingTop: standalone ? 72 : 0 }}>
+    <div>
       <Section>
         {/* Shared masthead across all four sub-pages */}
         <Reveal>
