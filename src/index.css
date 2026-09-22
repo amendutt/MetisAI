@@ -53,6 +53,14 @@ button {
   color: inherit;
 }
 
+/* Justify body copy across every page. Headings, labels, nav links, tags,
+   and other short/UI text use their own elements and are unaffected. */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
 /* Respect reduced-motion at the document level too */
 @media (prefers-reduced-motion: reduce) {
   html {

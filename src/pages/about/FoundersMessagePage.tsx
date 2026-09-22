@@ -2,7 +2,7 @@ import { Reveal, Rule } from "../../components/Reveal";
 import { Label } from "../../components/Label";
 import { T } from "../../data/theme";
 import { BRAND_NAME } from "../../data/constants";
-import { FOUNDERS_MESSAGE, FOUNDERS_PRIORITIES } from "../../data/about";
+import { FOUNDERS_MESSAGE, FOUNDERS_PRIORITIES, INSPIRATION } from "../../data/about";
 
 export function FoundersMessagePage() {
   const body = FOUNDERS_MESSAGE.body;
@@ -13,7 +13,7 @@ export function FoundersMessagePage() {
     <>
       <Reveal>
         <div style={{ marginBottom: 48 }}>
-          <Label text="Message from founders" />
+          <Label text="Message from founder" />
         </div>
       </Reveal>
 
@@ -123,6 +123,75 @@ export function FoundersMessagePage() {
           </div>
         </Reveal>
       </div>
+
+      {/* Our Inspiration */}
+      <Reveal delay={0.16}>
+        <div style={{ marginTop: "clamp(56px, 8vw, 88px)" }}>
+          <Label text="Our inspiration" />
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "minmax(0,220px) minmax(0,1fr)",
+              gap: "clamp(24px, 5vw, 56px)",
+              alignItems: "start",
+              marginTop: 24,
+            }}
+          >
+            <div>
+              <img
+                src={INSPIRATION.photo}
+                alt={INSPIRATION.name}
+                style={{
+                  width: "100%",
+                  maxWidth: 220,
+                  aspectRatio: "4 / 3",
+                  objectFit: "cover",
+                  borderRadius: T.radius,
+                  border: `1px solid ${T.color.rule}`,
+                  display: "block",
+                }}
+              />
+              <div
+                style={{
+                  fontFamily: T.font.display,
+                  fontSize: 17,
+                  fontWeight: 600,
+                  color: T.color.ink,
+                  marginTop: 14,
+                  lineHeight: 1.3,
+                }}
+              >
+                {INSPIRATION.name}
+              </div>
+              <a
+                href={INSPIRATION.link}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  fontFamily: T.font.mono,
+                  fontSize: 11,
+                  color: T.color.accent,
+                  letterSpacing: "0.04em",
+                }}
+              >
+                IET Lucknow faculty page ↗
+              </a>
+            </div>
+            <p
+              style={{
+                fontFamily: T.font.body,
+                fontSize: 16,
+                lineHeight: 1.75,
+                color: T.color.inkSoft,
+                margin: 0,
+                maxWidth: "64ch",
+              }}
+            >
+              {INSPIRATION.bio}
+            </p>
+          </div>
+        </div>
+      </Reveal>
     </>
   );
 }

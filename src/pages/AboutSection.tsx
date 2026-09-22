@@ -9,6 +9,7 @@ import { VisionMissionPage } from "./about/VisionMissionPage";
 import { FoundersMessagePage } from "./about/FoundersMessagePage";
 import { BoardOfDirectorsPage } from "./about/BoardOfDirectorsPage";
 import { OurConsultantsPage } from "./about/OurConsultantsPage";
+import { CoreTeamPage } from "./about/CoreTeamPage";
 
 export function AboutSection({
   activeAbout,
@@ -55,6 +56,7 @@ export function AboutSection({
           {activeAbout === "Message From Founders" && <FoundersMessagePage />}
           {activeAbout === "Board of Directors" && <BoardOfDirectorsPage />}
           {activeAbout === "Our Consultants" && <OurConsultantsPage />}
+          {activeAbout === "Core Team" && <CoreTeamPage />}
         </div>
       </Section>
     </div>

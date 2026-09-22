@@ -1,8 +1,8 @@
 import { Section, SectionHeading } from "../components/Section";
 import { Reveal, Rule } from "../components/Reveal";
-import { ConsultantsRoster } from "../components/ConsultantsRoster";
+import { TeamRoster } from "../components/TeamRoster";
 import { T } from "../data/theme";
-import { CONSULTING_SERVICES } from "../data/about";
+import { CONSULTING_SERVICES, CONSULTANTS } from "../data/about";
 
 export function ConsultingSection() {
   return (
@@ -52,7 +52,7 @@ export function ConsultingSection() {
         intro="A multi-disciplinary bench supporting delivery across product, research, and enterprise transformation."
         accent={T.color.ink}
       />
-      <ConsultantsRoster />
+      <TeamRoster members={CONSULTANTS} />
     </Section>
   );
 }

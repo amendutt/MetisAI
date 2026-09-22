@@ -9,6 +9,7 @@ export const ABOUT_LINKS = [
   "Message From Founders",
   "Board of Directors",
   "Our Consultants",
+  "Core Team",
 ] as const;
 export type AboutLink = (typeof ABOUT_LINKS)[number];
 

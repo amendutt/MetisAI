@@ -20,7 +20,7 @@ export function BoardOfDirectorsPage() {
               margin: "20px 0 18px",
             }}
           >
-            Governance, research, and learning at the core.
+            Governance, research, and people at the core.
           </h2>
           <p style={{ fontFamily: T.font.body, fontSize: 17, lineHeight: 1.75, color: T.color.inkSoft }}>
             Our board structure is designed to balance innovation, responsible growth, and educational
@@ -32,31 +32,60 @@ export function BoardOfDirectorsPage() {
       <Rule />
 
       {BOARD_MEMBERS.map((m, i) => (
-        <Reveal key={m.title} delay={i * 0.07}>
+        <Reveal key={m.name} delay={i * 0.08}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "minmax(0,60px) minmax(0,280px) minmax(0,1fr)",
+              gridTemplateColumns: "minmax(0,60px) minmax(0,180px) minmax(0,1fr)",
               gap: "clamp(16px, 4vw, 48px)",
-              padding: "32px 0",
+              padding: "36px 0",
               alignItems: "start",
             }}
           >
             <span style={{ fontFamily: T.font.mono, fontSize: 11, color: T.color.inkFaint, letterSpacing: "0.1em" }}>
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3
-              style={{
-                fontFamily: T.font.display,
-                fontSize: "clamp(1.2rem, 2.3vw, 1.65rem)",
-                fontWeight: 600,
-                letterSpacing: "-0.015em",
-                color: T.color.ink,
-                margin: 0,
-              }}
-            >
-              {m.title}
-            </h3>
+
+            <div>
+              {m.photo ? (
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  style={{
+                    width: 88,
+                    height: 88,
+                    objectFit: "cover",
+                    borderRadius: T.radius,
+                    border: `1px solid ${T.color.rule}`,
+                    marginBottom: 14,
+                  }}
+                />
+              ) : null}
+              <h3
+                style={{
+                  fontFamily: T.font.display,
+                  fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
+                  fontWeight: 600,
+                  letterSpacing: "-0.015em",
+                  color: T.color.ink,
+                  margin: "0 0 6px",
+                }}
+              >
+                {m.name}
+              </h3>
+              <div
+                style={{
+                  fontFamily: T.font.mono,
+                  fontSize: 11,
+                  letterSpacing: "0.06em",
+                  color: T.color.accent,
+                  lineHeight: 1.5,
+                }}
+              >
+                {m.role.toUpperCase()}
+              </div>
+            </div>
+
             <p
               style={{
                 fontFamily: T.font.body,
@@ -64,10 +93,10 @@ export function BoardOfDirectorsPage() {
                 lineHeight: 1.7,
                 color: T.color.inkSoft,
                 margin: 0,
-                maxWidth: "52ch",
+                maxWidth: "62ch",
               }}
             >
-              {m.desc}
+              {m.bio}
             </p>
           </div>
           <Rule />

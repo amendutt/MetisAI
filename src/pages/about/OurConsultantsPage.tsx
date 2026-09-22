@@ -1,7 +1,8 @@
 import { Reveal, Rule } from "../../components/Reveal";
 import { Label } from "../../components/Label";
-import { ConsultantsRoster } from "../../components/ConsultantsRoster";
+import { TeamRoster } from "../../components/TeamRoster";
 import { T } from "../../data/theme";
+import { CONSULTANTS } from "../../data/about";
 
 export function OurConsultantsPage() {
   return (
@@ -20,17 +21,17 @@ export function OurConsultantsPage() {
               margin: "20px 0 18px",
             }}
           >
-            Advisors who strengthen delivery from strategy to deployment.
+            Advisors from the Central Research Laboratory, Bharat Electronics Limited.
           </h2>
           <p style={{ fontFamily: T.font.body, fontSize: 17, lineHeight: 1.75, color: T.color.inkSoft }}>
-            From AI architecture to healthcare analytics and LLM systems, our consultant network supports
-            practical execution at every stage.
+            Our consultants bring AI and Data Science research from a national defense research
+            institution directly into practical, deployable systems.
           </p>
         </div>
       </Reveal>
 
       <Rule />
-      <ConsultantsRoster />
+      <TeamRoster members={CONSULTANTS} />
     </>
   );
 }
