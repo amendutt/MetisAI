@@ -20,6 +20,7 @@ export type TeamMember = {
   photo?: string;
   specialties: string[];
   bio: string;
+  exp: string;
 };
 
 /** Senior consultants — Central Research Laboratory, Bharat Electronics Limited. */
@@ -33,6 +34,7 @@ export const CONSULTANTS: TeamMember[] = [
     photo: mukulPhoto,
     specialties: ["Machine Learning", "NLP & LLMs", "MLOps", "Computer Vision"],
     bio: "Member of Research Staff at the Central Research Laboratory (Bharat Electronics Limited). Specializes in Machine Learning, NLP, LLMs, and MLOps, with practical expertise in Python, DistilBERT, and Hugging Face. Previously interned as a Software Engineer at DRDO (IRDE), building computer vision systems for facial recognition.",
+    exp:"4+",
   },
   {
     name: "Ms. Jagriti",
@@ -43,6 +45,7 @@ export const CONSULTANTS: TeamMember[] = [
     photo: jagritiPhoto,
     specialties: ["NLP", "High-Dimensional Data", "DevOps", "Quantum Computing"],
     bio: "Member of Research Staff at the Central Research Laboratory (Bharat Electronics Limited). Her research spans AI-based mental health analysis using social media data, with technical proficiency in Python, Docker, Kubernetes, GCP, Jenkins, and Terraform. Current interests include Quantum Computing and optimization for defense-oriented technologies.",
+    exp:"6+",
   },
 ];
 
@@ -57,6 +60,7 @@ export const CORE_TEAM: TeamMember[] = [
     photo: ishanPhoto,
     specialties: ["Generative & Agentic AI", "Computer Vision", "Cybersecurity", "IEEE Research"],
     bio: "AI and emerging-technology researcher with 2.5+ years across Machine Learning, Deep Learning, Generative AI, Agentic AI, Quantum Computing, Computer Vision, Cybersecurity, Biomedical AI, and Robotics, with research ties to IIT Jammu, NIT Trichy, NIT Surathkal, NIT Hamirpur, and MANIT Bhopal. Co-inventor of a granted patent for an AI and IoT-powered Cyber Threat Detection Device, author of 10+ research papers, and creator of SHIELD, Raseed++, and RARE-Net. Currently an IEEE reviewer for international conferences.",
+    exp:"4+",
   },
   {
     name: "Krishna Kumar Burman",
@@ -67,6 +71,7 @@ export const CORE_TEAM: TeamMember[] = [
     photo: krishnaPhoto,
     specialties: ["Edge AI", "Robotics", "IoT", "Computer Vision"],
     bio: "Ph.D. scholar in the MFS–DSAI programme at IIT Roorkee, researching Edge AI, Machine Learning, and IoT for Intelligent Transportation Systems. Lead author of a smoother robot-arm motion technique under review at Industrial Robot (Emerald Publishing), and published a review on 3D-printed prosthetic arms at NPDSM 2024. Works across ROS 2, MoveIt 2, Gazebo, and embedded systems.",
+    exp:"4+",
   },
   {
     name: "Yashasav Khandelwal",
@@ -77,6 +82,7 @@ export const CORE_TEAM: TeamMember[] = [
     photo: yashasavPhoto,
     specialties: ["Elastic Optical Networks", "IoT & VLSI", "Data Analytics", "IEEE Research"],
     bio: "Multidisciplinary researcher across Data Analytics, IoT, VLSI, AI, Robotics, and Optical Networking, with two IEEE Xplore–indexed publications from CICN 2025 on AI-driven, energy-efficient Elastic Optical Networks. Has mentored at HACKORBIT 2025 and serves as an IEEE reviewer for international conferences.",
+    exp:"4+",
   },
   {
     name: "Pranjal Dwivedi",
@@ -87,6 +93,7 @@ export const CORE_TEAM: TeamMember[] = [
     photo: pranjalPhoto,
     specialties: ["Cybersecurity", "Quantum Computing", "Serverless AI", "Penetration Testing"],
     bio: "Researcher across AI, Machine Learning, Cybersecurity, Quantum Computing, and Cryptography, with internships and research engagements at NIT Trichy, IIT Jammu, NIT Surathkal, BBAU, and INNEFU Labs. His NIT Trichy work cut latency by 37% through serverless scaling; his NIT Surathkal work achieved 1.46× faster training with 12% higher accuracy. Published at IEEE CICN-2025 and co-authored two volumes of Artificial Intelligence and Ethics.",
+    exp:"4+",
   },
   {
     name: "Ayush Kemni",
@@ -96,6 +103,7 @@ export const CORE_TEAM: TeamMember[] = [
     color: T.cat.gen,
     specialties: [],
     bio: "",
+    exp:"4+",
   },
 ];
 
